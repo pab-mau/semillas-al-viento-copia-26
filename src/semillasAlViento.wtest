@@ -8,8 +8,8 @@ test "plantas" {
     
     
     const soja = new Soja(altura = 0.6, semillaDeOrigen = 2001, anioDeSuPropiaSemilla=2009)
-    const quinoa = new Quinoa(espacioQueOcupa=0.2,semillaDeOrigen=2010)
-    const quinoa2 = new Quinoa(espacioQueOcupa=0.9,semillaDeOrigen=2003)
+    const quinoa = new Quinoa(altura=0.5,espacioQueOcupa=0.2,semillaDeOrigen=2010)
+    const quinoa2 = new Quinoa(altura=0.5,espacioQueOcupa=0.9,semillaDeOrigen=2003)
     
     
 	assert.that(menta.daSemillas())

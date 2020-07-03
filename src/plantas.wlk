@@ -20,7 +20,7 @@ class Planta {
 	method espacioQueOcupa()
 	method leResultaIdeal(unaParcela)
 	
-	method seNecesitaSiEsEcoliga(unaParcela) {
+	method seNecesitaSiEsEcolologica(unaParcela) {
 		return unaParcela.esEcologica()
 		   and not unaParcela.tieneComplicaciones()
 		   and self.leResultaIdeal(unaParcela)
@@ -37,7 +37,7 @@ class Planta {
 	
 	method seAsociaBien(unaParcela) {
 	
-	return self.seNecesitaSiEsEcoliga(unaParcela) 
+	return self.seNecesitaSiEsEcolologica(unaParcela) 
 	    or self.seNecesitaSiEsIndustrial(unaParcela)
 		
 	}
