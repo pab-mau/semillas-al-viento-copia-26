@@ -1,0 +1,38 @@
+import plantas.*
+import parcelas.*
+
+test "plantas" {
+    
+    const menta = new Menta(altura =1 , semillaDeOrigen = 2002 )
+    const menta2 = new Menta(altura =0.3 , semillaDeOrigen = 2002 )
+    
+    
+    const soja = new Soja(altura = 0.6, semillaDeOrigen = 2001, anioDeSuPropiaSemilla=2009)
+    const quinoa = new Quinoa(espacioQueOcupa=0.2,semillaDeOrigen=2010)
+    const quinoa2 = new Quinoa(espacioQueOcupa=0.9,semillaDeOrigen=2003)
+    
+    
+	assert.that(menta.daSemillas())
+	assert.equals(3, menta.espacioQueOcupa())
+    assert.notThat(menta2.daSemillas())
+    assert.equals(0.9, menta2.espacioQueOcupa())
+    assert.equals(7 , soja.toleranciaAlSol())
+    assert.notThat(soja.daSemillas())
+    assert.equals(0.3 , soja.espacioQueOcupa())
+    assert.that(quinoa.daSemillas())
+    assert.that(quinoa2.daSemillas())
+    
+    const parcela = new Parcela(ancho=20,largo=1,horasAlSol=10,plantas=([menta,soja]))
+    
+    assert.equals(20 , parcela.superficie())
+    assert.equals(4 , parcela.cantidadMaximaPlantas())
+    
+    assert.that(menta.leResultaIdeal(parcela))
+    assert.notThat(soja.leResultaIdeal(parcela))
+    
+    assert.equals(1,parcela.cantidadPlantasBienAsociadas())
+    }
+    
+    
+    
+    
